@@ -13,3 +13,9 @@ SmileyVue::SmileyVue() {
 
 SmileyVue::~SmileyVue() {
 }
+
+void SmileyVue::afficher(RenderWindow& fenetre)
+{
+
+}
+
