@@ -3,7 +3,9 @@ using namespace sf;
 int main()
 {
     RenderWindow fenetre(VideoMode(1000, 1000), "SFML !");
-    CircleShape cercle(50.f);
+    CircleShape visage(50.f);
+    visage.setFillColor(Color::Yellow);
+    visage.setPosition(50,50);
     while (fenetre.isOpen())
     {
         Event evenement;
@@ -13,7 +15,7 @@ int main()
                 fenetre.close();
         }
         fenetre.clear();
-        fenetre.draw(cercle);
+        fenetre.draw(visage);
         fenetre.display();
     }
     return 0;
