@@ -16,9 +16,9 @@ SmileyVue::~SmileyVue() {
 
 void SmileyVue::afficher(RenderWindow& fenetre)
 {
-    CircleShape visage(50.f);
-    visage.setFillColor(Color::Yellow);
-    visage.setPosition(50,50);
+    CircleShape* visage = new CircleShape(50.f);
+    visage->setFillColor(Color::Yellow);
+    visage->setPosition(50,50);
 
     CircleShape oeilDroit(10.f);
     oeilDroit.setFillColor(Color::Green);
@@ -32,7 +32,7 @@ void SmileyVue::afficher(RenderWindow& fenetre)
     bouche.setFillColor(Color::Red);
     bouche.setPosition(65,110);
 
-    fenetre.draw(visage);
+    fenetre.draw(*visage);
     fenetre.draw(oeilDroit);
     fenetre.draw(oeilGauche);
     fenetre.draw(bouche);

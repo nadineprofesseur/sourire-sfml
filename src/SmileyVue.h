@@ -11,6 +11,8 @@ using namespace sf;
 #define SMILEYVUE_H_
 
 class SmileyVue {
+protected:
+
 public:
 	SmileyVue();
 	virtual ~SmileyVue();
