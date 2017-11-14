@@ -12,7 +12,7 @@ SmileyVue::SmileyVue(int x, int y) {
 	this->y = y;
 
     visage = new CircleShape(50.f);
-    visage->setFillColor(Color::Yellow);
+    visage->setFillColor(Color::Black);
     visage->setPosition(x + 20 - 50,y + 50 - 50);
 
     oeilDroit = new CircleShape(10.f);
@@ -30,7 +30,7 @@ SmileyVue::SmileyVue(int x, int y) {
 
 SmileyVue::SmileyVue() {
     visage = new CircleShape(50.f);
-    visage->setFillColor(Color::Yellow);
+    visage->setFillColor(Color::Black);
     visage->setPosition(50,50);
 
     oeilDroit = new CircleShape(10.f);

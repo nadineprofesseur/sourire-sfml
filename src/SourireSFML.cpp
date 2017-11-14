@@ -5,14 +5,19 @@ using namespace sf;
 using namespace std;
 int main()
 {
-    RenderWindow fenetre(VideoMode(1000, 1000), "SFML !");
+    RenderWindow fenetre(VideoMode(800, 600), "SFML !");
 
-    SmileyVue smileyVue(500,500);
+    SmileyVue smileyVue(300,200);
 
     // https://apod.nasa.gov/apod/ap171114.html
     string cheminImageEspace = "C:\\DeepPleiadesPanstarrs.jpg";
     Texture ambianceEspace;
     ambianceEspace.loadFromFile(cheminImageEspace);
+    Sprite * scene = NULL;
+    if(ambianceEspace.loadFromFile(cheminImageEspace))
+    {
+    	scene = new Sprite(ambianceEspace);
+    }
 
     while (fenetre.isOpen())
     {
@@ -23,6 +28,7 @@ int main()
                 fenetre.close();
         }
         fenetre.clear();
+        if(scene) fenetre.draw(*scene);
         smileyVue.afficher(fenetre);
         fenetre.display();
     }
