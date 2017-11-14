@@ -10,7 +10,7 @@ int main()
     SmileyVue smileyVue(300,200);
 
     // https://apod.nasa.gov/apod/ap171114.html
-    string cheminImageEspace = "C:\\DeepPleiadesPanstarrs.jpg";
+    string cheminImageEspace = "decoration/images/DeepPleiadesPanstarrs.jpg";
     Texture ambianceEspace;
     ambianceEspace.loadFromFile(cheminImageEspace);
     Sprite * scene = NULL;
