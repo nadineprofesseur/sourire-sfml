@@ -3,6 +3,7 @@ using namespace sf;
 int main()
 {
     RenderWindow fenetre(VideoMode(1000, 1000), "SFML !");
+
     CircleShape visage(50.f);
     visage.setFillColor(Color::Yellow);
     visage.setPosition(50,50);
@@ -14,6 +15,10 @@ int main()
     CircleShape oeilGauche(10.f);
     oeilGauche.setFillColor(Color::Green);
     oeilGauche.setPosition(70,70);
+
+    RectangleShape bouche(Vector2f(70, 5));
+    bouche.setFillColor(Color::Red);
+    bouche.setPosition(65,110);
 
     while (fenetre.isOpen())
     {
@@ -27,6 +32,7 @@ int main()
         fenetre.draw(visage);
         fenetre.draw(oeilDroit);
         fenetre.draw(oeilGauche);
+        fenetre.draw(bouche);
         fenetre.display();
     }
     return 0;
