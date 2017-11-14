@@ -16,8 +16,12 @@ protected:
     CircleShape* oeilDroit;
     CircleShape* oeilGauche;
     RectangleShape* bouche;
+
+    int x;
+    int y;
 public:
 	SmileyVue();
+	SmileyVue(int x, int y);
 	virtual ~SmileyVue();
 	void afficher(RenderWindow& fenetre);
 };

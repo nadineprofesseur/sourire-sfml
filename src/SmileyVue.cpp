@@ -7,6 +7,27 @@
 
 #include "SmileyVue.h"
 
+SmileyVue::SmileyVue(int x, int y) {
+	this->x = x;
+	this->y = y;
+
+    visage = new CircleShape(50.f);
+    visage->setFillColor(Color::Yellow);
+    visage->setPosition(50,50);
+
+    oeilDroit = new CircleShape(10.f);
+    oeilDroit->setFillColor(Color::Green);
+    oeilDroit->setPosition(110,70);
+
+    oeilGauche = new CircleShape(10.f);
+    oeilGauche->setFillColor(Color::Green);
+    oeilGauche->setPosition(70,70);
+
+    bouche = new RectangleShape(Vector2f(70, 5));
+    bouche->setFillColor(Color::Red);
+    bouche->setPosition(65,110);
+}
+
 SmileyVue::SmileyVue() {
     visage = new CircleShape(50.f);
     visage->setFillColor(Color::Yellow);
