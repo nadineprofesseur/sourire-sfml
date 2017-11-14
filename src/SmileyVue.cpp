@@ -8,19 +8,6 @@
 #include "SmileyVue.h"
 
 SmileyVue::SmileyVue() {
-
-}
-
-SmileyVue::~SmileyVue() {
-}
-
-void SmileyVue::afficher(RenderWindow& fenetre)
-{
-    CircleShape* visage;
-    CircleShape* oeilDroit;
-    CircleShape* oeilGauche;
-    RectangleShape* bouche;
-
     visage = new CircleShape(50.f);
     visage->setFillColor(Color::Yellow);
     visage->setPosition(50,50);
@@ -36,7 +23,13 @@ void SmileyVue::afficher(RenderWindow& fenetre)
     bouche = new RectangleShape(Vector2f(70, 5));
     bouche->setFillColor(Color::Red);
     bouche->setPosition(65,110);
+}
 
+SmileyVue::~SmileyVue() {
+}
+
+void SmileyVue::afficher(RenderWindow& fenetre)
+{
     fenetre.draw(*visage);
     fenetre.draw(*oeilDroit);
     fenetre.draw(*oeilGauche);

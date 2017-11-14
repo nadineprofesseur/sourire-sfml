@@ -12,7 +12,10 @@ using namespace sf;
 
 class SmileyVue {
 protected:
-
+    CircleShape* visage;
+    CircleShape* oeilDroit;
+    CircleShape* oeilGauche;
+    RectangleShape* bouche;
 public:
 	SmileyVue();
 	virtual ~SmileyVue();
