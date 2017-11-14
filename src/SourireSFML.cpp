@@ -11,17 +11,22 @@ int main()
     oeilDroit.setFillColor(Color::Green);
     oeilDroit.setPosition(110,70);
 
+    CircleShape oeilGauche(10.f);
+    oeilGauche.setFillColor(Color::Green);
+    oeilGauche.setPosition(70,70);
+
     while (fenetre.isOpen())
     {
-        Event evenement;
+        sf::Event evenement;
         while (fenetre.pollEvent(evenement))
         {
-            if (evenement.type == Event::Closed)
+            if (evenement.type == sf::Event::Closed)
                 fenetre.close();
         }
         fenetre.clear();
         fenetre.draw(visage);
         fenetre.draw(oeilDroit);
+        fenetre.draw(oeilGauche);
         fenetre.display();
     }
     return 0;
