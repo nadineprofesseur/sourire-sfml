@@ -19,6 +19,7 @@ protected:
 public:
 	MagicienVue();
 	virtual ~MagicienVue();
+	void afficher(RenderWindow& fenetre);
 };
 
 #endif /* MAGICIENVUE_H_ */

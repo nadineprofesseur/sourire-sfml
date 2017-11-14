@@ -17,3 +17,8 @@ MagicienVue::MagicienVue() {
 
 MagicienVue::~MagicienVue() {
 }
+
+void MagicienVue::afficher(RenderWindow& fenetre)
+{
+	fenetre.draw(*illustration);
+}
