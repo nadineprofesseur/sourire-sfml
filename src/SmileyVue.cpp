@@ -16,19 +16,24 @@ SmileyVue::~SmileyVue() {
 
 void SmileyVue::afficher(RenderWindow& fenetre)
 {
-    CircleShape* visage = new CircleShape(50.f);
+    CircleShape* visage;
+    CircleShape* oeilDroit;
+    CircleShape* oeilGauche;
+    RectangleShape* bouche;
+
+    visage = new CircleShape(50.f);
     visage->setFillColor(Color::Yellow);
     visage->setPosition(50,50);
 
-    CircleShape* oeilDroit = new CircleShape(10.f);
+    oeilDroit = new CircleShape(10.f);
     oeilDroit->setFillColor(Color::Green);
     oeilDroit->setPosition(110,70);
 
-    CircleShape* oeilGauche = new CircleShape(10.f);
+    oeilGauche = new CircleShape(10.f);
     oeilGauche->setFillColor(Color::Green);
     oeilGauche->setPosition(70,70);
 
-    RectangleShape* bouche = new RectangleShape(Vector2f(70, 5));
+    bouche = new RectangleShape(Vector2f(70, 5));
     bouche->setFillColor(Color::Red);
     bouche->setPosition(65,110);
 
