@@ -5,7 +5,7 @@ int main()
 {
     RenderWindow fenetre(VideoMode(1000, 1000), "SFML !");
 
-    SmileyVue smileyVue(0,0);
+    SmileyVue smileyVue(500,500);
 
     while (fenetre.isOpen())
     {
