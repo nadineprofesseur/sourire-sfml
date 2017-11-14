@@ -8,9 +8,8 @@ int main()
 {
     RenderWindow fenetre(VideoMode(800, 600), "SFML !");
 
-    SmileyVue smileyVue(300,200);
-    MagicienVue magicienVue;
-
+    //SmileyVue smileyVue(300,200);
+    MagicienVue magicienVue(400,400);
 
     // https://apod.nasa.gov/apod/ap171114.html
     string cheminImageEspace = "decoration/images/DeepPleiadesPanstarrs.jpg";
@@ -32,7 +31,7 @@ int main()
         }
         fenetre.clear();
         if(scene) fenetre.draw(*scene);
-        smileyVue.afficher(fenetre);
+        //smileyVue.afficher(fenetre);
         magicienVue.afficher(fenetre);
         fenetre.display();
     }

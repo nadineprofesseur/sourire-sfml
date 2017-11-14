@@ -13,10 +13,12 @@ using namespace sf;
 class MagicienVue {
 
 protected:
-
+	int x;
+	int y;
 	Texture * texture = NULL;
 	Sprite * illustration = NULL;
 public:
+	MagicienVue(int x, int y);
 	MagicienVue();
 	virtual ~MagicienVue();
 	void afficher(RenderWindow& fenetre);
