@@ -22,6 +22,7 @@ public:
 	MagicienVue();
 	virtual ~MagicienVue();
 	void afficher(RenderWindow& fenetre);
+	void deplacer(float deplacementX, float deplacementY);
 };
 
 #endif /* MAGICIENVUE_H_ */

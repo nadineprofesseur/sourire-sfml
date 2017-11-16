@@ -21,6 +21,8 @@ int main()
     	scene = new Sprite(ambianceEspace);
     }
 
+    float pas = 10;
+
     while (fenetre.isOpen())
     {
         Event evenement;
@@ -36,6 +38,18 @@ int main()
             		case Keyboard::A:
             			cout << "Touche A" << endl;
             		break;
+            		case Keyboard::Left:
+            			magicienVue.deplacer(-pas, 0);
+               		break;
+            		case Keyboard::Right:
+            			magicienVue.deplacer(pas, 0);
+                   	break;
+            		case Keyboard::Up:
+            			magicienVue.deplacer(0, -pas);
+                   	break;
+            		case Keyboard::Down:
+            			magicienVue.deplacer(0, pas);
+                  	break;
             	}
             }
         }
