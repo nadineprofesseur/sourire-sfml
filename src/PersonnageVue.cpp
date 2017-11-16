@@ -20,3 +20,8 @@ void PersonnageVue::deplacer(float deplacementX, float deplacementY)
 	this->y += deplacementY;
 	this->illustration->setPosition(this->x, this->y);
 }
+
+void PersonnageVue::afficher(RenderWindow& fenetre)
+{
+	fenetre.draw(*illustration);
+}

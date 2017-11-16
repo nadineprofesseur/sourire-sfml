@@ -30,9 +30,5 @@ MagicienVue::MagicienVue(int x, int y) {
 MagicienVue::~MagicienVue() {
 }
 
-void MagicienVue::afficher(RenderWindow& fenetre)
-{
-	fenetre.draw(*illustration);
-}
 
 

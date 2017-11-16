@@ -59,6 +59,7 @@ int main()
         if(scene) fenetre.draw(*scene);
         //smileyVue.afficher(fenetre);
         magicienVue.afficher(fenetre);
+        guerrierVue.afficher(fenetre);
         fenetre.display();
     }
     return 0;

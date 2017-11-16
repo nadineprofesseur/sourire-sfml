@@ -20,6 +20,7 @@ public:
 	PersonnageVue();
 	virtual ~PersonnageVue();
 	void deplacer(float deplacementX, float deplacementY);
+	void afficher(RenderWindow& fenetre);
 };
 
 #endif /* PERSONNAGEVUE_H_ */

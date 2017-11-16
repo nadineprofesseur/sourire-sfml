@@ -18,7 +18,6 @@ public:
 	MagicienVue(int x, int y);
 	MagicienVue();
 	virtual ~MagicienVue();
-	void afficher(RenderWindow& fenetre);
 };
 
 #endif /* MAGICIENVUE_H_ */
