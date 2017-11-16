@@ -11,8 +11,8 @@ int main()
     RenderWindow fenetre(VideoMode(800, 600), "SFML !");
 
     //SmileyVue smileyVue(300,200);
-    MagicienVue magicienVue(400,400);
-    GuerrierVue guerrierVue(200,200);
+    PersonnageVue* magicienVue = new MagicienVue(400,400);
+    PersonnageVue* guerrierVue = new GuerrierVue(200,200);
 
     // https://apod.nasa.gov/apod/ap171114.html
     string cheminImageEspace = "decoration/images/DeepPleiadesPanstarrs.jpg";
@@ -41,16 +41,16 @@ int main()
             			cout << "Touche A" << endl;
             		break;
             		case Keyboard::Left:
-            			magicienVue.deplacer(-pas, 0);
+            			magicienVue->deplacer(-pas, 0);
                		break;
             		case Keyboard::Right:
-            			magicienVue.deplacer(pas, 0);
+            			magicienVue->deplacer(pas, 0);
                    	break;
             		case Keyboard::Up:
-            			magicienVue.deplacer(0, -pas);
+            			magicienVue->deplacer(0, -pas);
                    	break;
             		case Keyboard::Down:
-            			magicienVue.deplacer(0, pas);
+            			magicienVue->deplacer(0, pas);
                   	break;
             	}
             }
@@ -58,8 +58,8 @@ int main()
         fenetre.clear();
         if(scene) fenetre.draw(*scene);
         //smileyVue.afficher(fenetre);
-        magicienVue.afficher(fenetre);
-        guerrierVue.afficher(fenetre);
+        magicienVue->afficher(fenetre);
+        guerrierVue->afficher(fenetre);
         fenetre.display();
     }
     return 0;
