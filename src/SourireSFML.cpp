@@ -14,7 +14,6 @@ int main()
     // https://apod.nasa.gov/apod/ap171114.html
     string cheminImageEspace = "decoration/images/DeepPleiadesPanstarrs.jpg";
     Texture ambianceEspace;
-    ambianceEspace.loadFromFile(cheminImageEspace);
     Sprite * scene = NULL;
     if(ambianceEspace.loadFromFile(cheminImageEspace))
     {
@@ -23,7 +22,7 @@ int main()
 
     while (fenetre.isOpen())
     {
-        sf::Event evenement;
+        Event evenement;
         while (fenetre.pollEvent(evenement))
         {
             if (evenement.type == sf::Event::Closed)
