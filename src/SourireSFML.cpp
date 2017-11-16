@@ -4,15 +4,19 @@
 #include "GuerrierVue.h"
 #include <string>
 #include <iostream>
+#include <vector>
 using namespace sf;
 using namespace std;
 int main()
 {
     RenderWindow fenetre(VideoMode(800, 600), "SFML !");
 
-    //SmileyVue smileyVue(300,200);
     PersonnageVue* magicienVue = new MagicienVue(400,400);
     PersonnageVue* guerrierVue = new GuerrierVue(200,200);
+    vector<PersonnageVue*> listePersonnages;
+    listePersonnages.push_back(magicienVue);
+    listePersonnages.push_back(guerrierVue);
+
 
     // https://apod.nasa.gov/apod/ap171114.html
     string cheminImageEspace = "decoration/images/DeepPleiadesPanstarrs.jpg";
@@ -57,9 +61,16 @@ int main()
         }
         fenetre.clear();
         if(scene) fenetre.draw(*scene);
-        //smileyVue.afficher(fenetre);
-        magicienVue->afficher(fenetre);
-        guerrierVue->afficher(fenetre);
+
+        vector<PersonnageVue*>::iterator visiteurPersonnages = listePersonnages.begin();
+        while(visiteurPersonnages != listePersonnages.end())
+        {
+        	(*visiteurPersonnages)->afficher(fenetre);
+        	// pas opérateur * des pointeurs, c'est la surcharge de celui-ci dans iterator()
+        	// (*visiteurPersonnages) donne un pointeur PersonnageVue*
+        	visiteurPersonnages++;
+        }
+
         fenetre.display();
     }
     return 0;
