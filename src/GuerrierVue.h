@@ -13,8 +13,8 @@
 class GuerrierVue: public PersonnageVue {
 
 protected:
-	Texture * textureBouclier = NULL;
-	Sprite * illustrationBouclier = NULL;
+	Sprite * illustrationBouclierRouge = NULL;
+	Sprite * illustrationBouclierBleu = NULL;
 	bool bouclierActif = false;
 public:
 	GuerrierVue(int x, int y);

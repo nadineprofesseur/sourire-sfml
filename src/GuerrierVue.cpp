@@ -15,10 +15,6 @@ GuerrierVue::GuerrierVue() {
 		texture = NULL;
 	this->illustration = new Sprite(*texture);
 	this->illustration->setPosition(this->x, this->y);
-	if(!textureBouclier->loadFromFile("decoration/images/bouclier-bleu.png"))
-		textureBouclier = NULL;
-	this->illustrationBouclier = new Sprite(*textureBouclier);
-	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
 }
 
 GuerrierVue::GuerrierVue(int x, int y)
@@ -30,12 +26,14 @@ GuerrierVue::GuerrierVue(int x, int y)
 		texture = NULL;
 	this->illustration = new Sprite(*texture);
 	this->illustration->setPosition(this->x, this->y);
-	textureBouclier = new Texture();
-
-	if(!textureBouclier->loadFromFile("decoration/images/bouclier-bleu.png"))
-		textureBouclier = NULL;
-	this->illustrationBouclier = new Sprite(*textureBouclier);
-	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
+	Texture * textureBouclierRouge = new Texture();
+	Texture * textureBouclierBleu = new Texture();
+	if(!textureBouclierRouge->loadFromFile("decoration/images/bouclier-rouge.png")) textureBouclierRouge = NULL;
+	if(!textureBouclierBleu->loadFromFile("decoration/images/bouclier-bleu.png")) textureBouclierBleu = NULL;
+	this->illustrationBouclierRouge = new Sprite(*textureBouclierRouge);
+	this->illustrationBouclierRouge->setPosition(this->x+50, this->y-20);
+	this->illustrationBouclierBleu = new Sprite(*textureBouclierBleu);
+	this->illustrationBouclierBleu->setPosition(this->x+50, this->y-20);
 }
 
 GuerrierVue::~GuerrierVue() {
@@ -44,25 +42,16 @@ GuerrierVue::~GuerrierVue() {
 void GuerrierVue::afficher(RenderWindow& fenetre)
 {
 	fenetre.draw(*illustration);
-	fenetre.draw(*illustrationBouclier);
+	fenetre.draw((this->bouclierActif)?(*illustrationBouclierRouge):(*illustrationBouclierBleu)); // ternaire
 }
 
 void GuerrierVue::activerBouclier()
 {
 	this->bouclierActif = true;
-	if(!textureBouclier->loadFromFile("decoration/images/bouclier-rouge.png"))
-		textureBouclier = NULL;
-	this->illustrationBouclier = new Sprite(*textureBouclier);
-	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
 }
 void GuerrierVue::desactiverBouclier()
 {
 	this->bouclierActif = false;
-	if(!textureBouclier->loadFromFile("decoration/images/bouclier-bleu.png"))
-		textureBouclier = NULL;
-	this->illustrationBouclier = new Sprite(*textureBouclier);
-	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
-
 }
 
 
