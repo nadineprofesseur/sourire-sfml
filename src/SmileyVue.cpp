@@ -55,6 +55,5 @@ void SmileyVue::afficher(RenderWindow& fenetre)
     fenetre.draw(*oeilDroit);
     fenetre.draw(*oeilGauche);
     fenetre.draw(*bouche);
-
 }
 
