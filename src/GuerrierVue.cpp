@@ -15,6 +15,10 @@ GuerrierVue::GuerrierVue() {
 		texture = NULL;
 	this->illustration = new Sprite(*texture);
 	this->illustration->setPosition(this->x, this->y);
+	if(!textureBouclier->loadFromFile("decoration/images/bouclier-bleu.png"))
+		textureBouclier = NULL;
+	this->illustrationBouclier = new Sprite(*textureBouclier);
+	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
 }
 
 GuerrierVue::GuerrierVue(int x, int y)
@@ -26,9 +30,20 @@ GuerrierVue::GuerrierVue(int x, int y)
 		texture = NULL;
 	this->illustration = new Sprite(*texture);
 	this->illustration->setPosition(this->x, this->y);
+	textureBouclier = new Texture();
+
+	if(!textureBouclier->loadFromFile("decoration/images/bouclier-bleu.png"))
+		textureBouclier = NULL;
+	this->illustrationBouclier = new Sprite(*textureBouclier);
+	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
 }
 
 GuerrierVue::~GuerrierVue() {
 }
 
+void GuerrierVue::afficher(RenderWindow& fenetre)
+{
+	fenetre.draw(*illustration);
+	fenetre.draw(*illustrationBouclier);
+}
 
