@@ -37,6 +37,13 @@ GuerrierVue::GuerrierVue(int x, int y)
 }
 
 GuerrierVue::~GuerrierVue() {
+	delete this->illustration;
+	delete this->texture;
+	delete this->illustrationBouclierBleu->getTexture();
+	delete this->illustrationBouclierBleu;
+	delete this->illustrationBouclierRouge->getTexture();
+	delete this->illustrationBouclierRouge;
+
 }
 
 void GuerrierVue::afficher(RenderWindow& fenetre)

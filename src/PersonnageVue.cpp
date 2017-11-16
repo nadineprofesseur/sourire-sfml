@@ -12,6 +12,8 @@ PersonnageVue::PersonnageVue() {
 }
 
 PersonnageVue::~PersonnageVue() {
+	delete this->illustration;
+	delete this->texture;
 }
 
 void PersonnageVue::deplacer(float deplacementX, float deplacementY)

@@ -28,6 +28,8 @@ MagicienVue::MagicienVue(int x, int y) {
 }
 
 MagicienVue::~MagicienVue() {
+	delete this->illustration;
+	delete this->texture;
 }
 
 void MagicienVue::afficher(RenderWindow& fenetre)
