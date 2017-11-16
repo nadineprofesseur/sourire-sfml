@@ -15,11 +15,14 @@ class GuerrierVue: public PersonnageVue {
 protected:
 	Texture * textureBouclier = NULL;
 	Sprite * illustrationBouclier = NULL;
+	bool bouclierActif = false;
 public:
 	GuerrierVue(int x, int y);
 	GuerrierVue();
 	virtual ~GuerrierVue();
 	void afficher(RenderWindow& fenetre);
+	void activerBouclier();
+	void desactiverBouclier();
 };
 
 #endif /* GUERRIERVUE_H_ */

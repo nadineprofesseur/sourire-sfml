@@ -11,8 +11,8 @@ int main()
 {
     RenderWindow fenetre(VideoMode(800, 600), "SFML !");
 
-    PersonnageVue* magicienVue = new MagicienVue(400,400);
-    PersonnageVue* guerrierVue = new GuerrierVue(200,200);
+    MagicienVue* magicienVue = new MagicienVue(400,400);
+    GuerrierVue* guerrierVue = new GuerrierVue(200,200);
     vector<PersonnageVue*> listePersonnages;
     listePersonnages.push_back(magicienVue);
     listePersonnages.push_back(guerrierVue);
@@ -37,6 +37,7 @@ int main()
             if (evenement.type == Event::Closed)
                 fenetre.close();
 
+
             if(evenement.type == Event::KeyPressed)
             {
             	switch(evenement.key.code)
@@ -56,6 +57,13 @@ int main()
             		case Keyboard::Down:
             			magicienVue->deplacer(0, pas);
                   	break;
+            		case Keyboard::B:
+            			guerrierVue->activerBouclier();
+            		break;
+            		case Keyboard::N :
+            			guerrierVue->desactiverBouclier();
+           			break;
+
             	}
             }
         }

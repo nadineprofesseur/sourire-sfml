@@ -47,3 +47,22 @@ void GuerrierVue::afficher(RenderWindow& fenetre)
 	fenetre.draw(*illustrationBouclier);
 }
 
+void GuerrierVue::activerBouclier()
+{
+	this->bouclierActif = true;
+	if(!textureBouclier->loadFromFile("decoration/images/bouclier-rouge.png"))
+		textureBouclier = NULL;
+	this->illustrationBouclier = new Sprite(*textureBouclier);
+	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
+}
+void GuerrierVue::desactiverBouclier()
+{
+	this->bouclierActif = false;
+	if(!textureBouclier->loadFromFile("decoration/images/bouclier-bleu.png"))
+		textureBouclier = NULL;
+	this->illustrationBouclier = new Sprite(*textureBouclier);
+	this->illustrationBouclier->setPosition(this->x+50, this->y-20);
+
+}
+
+
