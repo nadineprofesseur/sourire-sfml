@@ -10,7 +10,7 @@
 MagicienVue::MagicienVue() {
 	this->x = 0;
 	this->y = 0;
-	texture = new Texture();
+	this->texture = new Texture();
 	if(!texture->loadFromFile("decoration/images/magicien.png"))
 		texture = NULL;
 	illustration = new Sprite(*texture);
@@ -35,10 +35,4 @@ void MagicienVue::afficher(RenderWindow& fenetre)
 	fenetre.draw(*illustration);
 }
 
-void MagicienVue::deplacer(float deplacementX, float deplacementY)
-{
-	this->x += deplacementX;
-	this->y += deplacementY;
-	this->illustration->setPosition(this->x, this->y);
-}
 

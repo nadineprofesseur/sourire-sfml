@@ -7,22 +7,18 @@
 
 #ifndef MAGICIENVUE_H_
 #define MAGICIENVUE_H_
-#include <SFML/Graphics.hpp>
+#include "PersonnageVue.h"
 using namespace sf;
 
-class MagicienVue {
-
+class MagicienVue : public PersonnageVue
+{
 protected:
-	int x;
-	int y;
-	Texture * texture = NULL;
-	Sprite * illustration = NULL;
+
 public:
 	MagicienVue(int x, int y);
 	MagicienVue();
 	virtual ~MagicienVue();
 	void afficher(RenderWindow& fenetre);
-	void deplacer(float deplacementX, float deplacementY);
 };
 
 #endif /* MAGICIENVUE_H_ */
