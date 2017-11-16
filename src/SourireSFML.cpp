@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "SmileyVue.h"
 #include "MagicienVue.h"
+#include "GuerrierVue.h"
 #include <string>
 #include <iostream>
 using namespace sf;
@@ -11,6 +12,7 @@ int main()
 
     //SmileyVue smileyVue(300,200);
     MagicienVue magicienVue(400,400);
+    GuerrierVue guerrierVue(200,200);
 
     // https://apod.nasa.gov/apod/ap171114.html
     string cheminImageEspace = "decoration/images/DeepPleiadesPanstarrs.jpg";
